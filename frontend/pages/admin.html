@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TravelHub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">✈️ TravelHub</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="packages.html" class="navbar-link">Packages</a></li>
+                <li><a href="bookings.html" class="navbar-link">My Bookings</a></li>
+                <li><a href="admin.html" class="navbar-link">Admin</a></li>
+                <li><a href="profile.html" class="navbar-link">
+                    👤 <span id="username"></span>
+                </a></li>
+                <li><button onclick="logout()" class="btn-logout">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 style="margin-bottom: 2rem;">Admin Dashboard</h1>
+
+            <!-- Stats Cards -->
+            <div id="stats-container" class="stats-grid"></div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('bookings')">Bookings</button>
+                <button class="tab" onclick="switchTab('packages')">Packages</button>
+                <button class="tab" onclick="switchTab('users')">Users</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="bookings-tab" class="tab-content active">
+                <h2>All Bookings</h2>
+                <div style="overflow-x: auto;">
+                    <table id="bookings-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>Package</th>
+                                <th>Travel Date</th>
+                                <th>People</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Payment</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="packages-tab" class="tab-content">
+                <h2>All Packages</h2>
+                <div id="packages-grid" class="card-grid"></div>
+            </div>
+
+            <div id="users-tab" class="tab-content">
+                <h2>All Users</h2>
+                <div style="overflow-x: auto;">
+                    <table id="users-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Full Name</th>
+                                <th>Phone</th>
+                                <th>Role</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tourly - Your Gateway to Amazing Adventures</p>
+        </div>
+    </footer>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">Loading...</div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

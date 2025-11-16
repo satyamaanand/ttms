@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - TravelHub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">✈️ TravelHub</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="packages.html" class="navbar-link">Packages</a></li>
+                <li><a href="bookings.html" class="navbar-link">My Bookings</a></li>
+                <li><a href="admin.html" class="navbar-link" id="admin-link" style="display: none;">Admin</a></li>
+                <li><a href="profile.html" class="navbar-link">
+                    👤 <span id="username"></span>
+                </a></li>
+                <li><button onclick="logout()" class="btn-logout">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="form-container">
+            <h1 style="text-align: center; margin-bottom: 2rem;">My Profile</h1>
+
+            <div id="profile-view">
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Username:</strong>
+                    <p id="profile-username" style="margin-top: 0.5rem; font-size: 1.1rem;"></p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Email:</strong>
+                    <p id="profile-email" style="margin-top: 0.5rem; font-size: 1.1rem;"></p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Full Name:</strong>
+                    <p id="profile-fullname" style="margin-top: 0.5rem; font-size: 1.1rem;"></p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Phone:</strong>
+                    <p id="profile-phone" style="margin-top: 0.5rem; font-size: 1.1rem;"></p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Role:</strong>
+                    <p id="profile-role" style="margin-top: 0.5rem; font-size: 1.1rem; text-transform: capitalize;"></p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <strong>Member Since:</strong>
+                    <p id="profile-joined" style="margin-top: 0.5rem; font-size: 1.1rem;"></p>
+                </div>
+                <button onclick="showEditForm()" class="btn btn-primary" style="width: 100%;">
+                    Edit Profile
+                </button>
+            </div>
+
+            <form id="profile-edit-form" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="edit-fullname" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" id="edit-phone" class="form-input">
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="submit" class="btn btn-success" style="flex: 1;">
+                        Save Changes
+                    </button>
+                    <button type="button" onclick="hideEditForm()" class="btn btn-secondary" style="flex: 1;">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tourly - Your Gateway to Amazing Adventures</p>
+        </div>
+    </footer>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">Loading...</div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/profile.js"></script>
+</body>
+</html>

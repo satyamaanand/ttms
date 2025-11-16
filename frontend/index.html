@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelHub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">✈️ TravelHub</a>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="pages/packages.html" class="navbar-link">Packages</a></li>
+                <li id="auth-links" style="display: flex; gap: 2rem;">
+                    <a href="pages/login.html" class="navbar-link">Login</a>
+                    <a href="pages/register.html" class="navbar-link">Register</a>
+                </li>
+                <li id="user-links" style="display: none; gap: 2rem; align-items: center;">
+                    <a href="pages/bookings.html" class="navbar-link">My Bookings</a>
+                    <a href="pages/admin.html" class="navbar-link" id="admin-link" style="display: none;">Admin</a>
+                    <a href="pages/profile.html" class="navbar-link">
+                        👤 <span id="username"></span>
+                    </a>
+                    <button onclick="logout()" class="btn-logout">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Your Next Adventure</h1>
+                <p>Explore amazing destinations and create unforgettable memories with the best travel packages</p>
+                <div>
+                    <a href="pages/packages.html" class="btn btn-primary">Browse Packages</a>
+                    <a href="pages/register.html" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Packages -->
+        <section class="container">
+            <h2 style="text-align: center; margin: 3rem 0 2rem;">Featured Packages</h2>
+            <div id="featured-packages" class="card-grid"></div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="container" style="margin-top: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Why Choose Tourly?</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🌍</div>
+                        <h3>Amazing Destinations</h3>
+                        <p>Explore the world's most beautiful and exciting locations</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">💰</div>
+                        <h3>Best Prices</h3>
+                        <p>Competitive pricing with no hidden fees</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div>
+                        <h3>Safe & Secure</h3>
+                        <p>Your safety and security is our top priority</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tourly - Your Gateway to Amazing Adventures</p>
+            <p>Contact: info@travelhub.com | +1-8000000000</p>
+        </div>
+    </footer>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">Loading...</div>
+
+    <!-- Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+</html>

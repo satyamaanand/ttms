@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packages - TravelHub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-brand">✈️ TravelHub</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="packages.html" class="navbar-link">Packages</a></li>
+                <li id="auth-links" style="display: flex; gap: 2rem;">
+                    <a href="login.html" class="navbar-link">Login</a>
+                    <a href="register.html" class="navbar-link">Register</a>
+                </li>
+                <li id="user-links" style="display: none; gap: 2rem; align-items: center;">
+                    <a href="bookings.html" class="navbar-link">My Bookings</a>
+                    <a href="admin.html" class="navbar-link" id="admin-link" style="display: none;">Admin</a>
+                    <a href="profile.html" class="navbar-link">
+                        👤 <span id="username"></span>
+                    </a>
+                    <button onclick="logout()" class="btn-logout">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 style="margin-bottom: 2rem;">Travel Packages</h1>
+
+            <!-- Filters -->
+            <div class="filters">
+                <h3 style="margin-bottom: 1rem;">Filter Packages</h3>
+                <div class="filter-grid">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">Destination</label>
+                        <input type="text" id="filter-destination" class="form-input" placeholder="e.g., Paris, Bali">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">Min Price</label>
+                        <input type="number" id="filter-min-price" class="form-input" placeholder="0">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">Max Price</label>
+                        <input type="number" id="filter-max-price" class="form-input" placeholder="5000">
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <button onclick="applyFilters()" class="btn btn-primary" style="width: 100%;">
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Count -->
+            <p id="package-count" style="margin-bottom: 1rem; color: #666;"></p>
+
+            <!-- Packages Grid -->
+            <div id="packages-container" class="card-grid"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tourly - Your Gateway to Amazing Adventures</p>
+        </div>
+    </footer>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">Loading...</div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/packages.js"></script>
+</body>
+</html>
